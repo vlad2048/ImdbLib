@@ -1,0 +1,9 @@
+.vs/
+.idea/
+*.suo
+*.user
+[Bb]in/
+[Oo]bj/
+
+_infos/
+_exes/

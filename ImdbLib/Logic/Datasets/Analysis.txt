@@ -1,0 +1,59 @@
+﻿TitleBasics (4.5GB / 01:50)
+===========
+tconst	titleType	primaryTitle	originalTitle	isAdult	startYear	endYear	runtimeMinutes	genres
+tt0000001	short	Carmencita	Carmencita	0	1894	\N	1	Documentary,Short
+tt0110912	movie	Pulp Fiction	Pulp Fiction	0	1994	\N	154	Crime,Drama
+
+TitleAkas
+=========
+titleId	ordering	title	region	language	types	attributes	isOriginalTitle
+tt0000001	1	Карменсіта	UA	\N	imdbDisplay	\N	0
+tt0110912	10	Pulp Fiction	US	\N	imdbDisplay	\N	0
+
+NameBasics
+==========
+nconst	primaryName	birthYear	deathYear	primaryProfession	knownForTitles
+nm0000001	Fred Astaire	1899	1987	soundtrack,actor,miscellaneous	tt0050419,tt0053137,tt0072308,tt0031983
+
+
+
+************************************************
+* Analyzing TitleBasics dataset - rows:9326963 *
+************************************************
+  [0] TitleId         (TitleId)
+    min:                        1
+    max:                        23029870
+    dups:                       0/9326963 (0.00%)
+  [1] Type            (Category)
+    empty:                      0/9326963 (0.00%)
+    catsCount:                  11
+    cats:                       movie,short,tvEpisode,tvMiniSeries,tvMovie,tvPilot,tvSeries,tvShort,tvSpecial,video,videoGame
+  [2] PrimaryTitle    (String)
+    empty:                      0/9326963 (0.00%)
+    distinct:                   4271280/9326963 (45.00%)
+  [3] OriginalTitle   (String)
+    empty:                      0/9326963 (0.00%)
+    distinct:                   4291954/9326963 (46.00%)
+  [4] IsAdult         (Bool)
+    false:                      9037289
+    true:                       289674
+  [5] StartYear       (NumberOpt)
+    pops:                       8078004/9326963 (86.00%)
+    min:                        1874
+    max:                        2029
+  [6] EndYear         (NumberOpt)
+    pops:                       97798/9326963 (1.00%)
+    min:                        1906
+    max:                        2028
+  [7] RuntimeMinute   (NumberOpt)
+    pops:                       2544854/9326963 (27.00%)
+    min:                        0
+    max:                        51420
+  [8] Genres          (Genres)
+    genres:                     Action (3.00%),Adventure (3.00%),Biography (1.00%),Drama (28.00%),Fantasy (2.00%),Comedy (20.00%),War (0.00%),Documentary (9.00%),Crime (4.00%),Romance (9.00%),Family (7.00%),History (1.00%),SciFi (1.00%),Thriller (1.00%),Western (0.00%),Short (11.00%),Sport (2.00%),Mystery (1.00%),Horror (1.00%),Music (3.00%),Animation (5.00%),Musical (0.00%),FilmNoir (0.00%),News (8.00%),Adult (3.00%),RealityTV (5.00%),GameShow (3.00%),TalkShow (11.00%)
+
+
+*************
+* TitleAkas *
+*************
+	2189 rows have IsOriginalTitle = "\N" (we consider that false)

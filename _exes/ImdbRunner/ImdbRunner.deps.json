@@ -1,0 +1,120 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ImdbRunner/0.0.1": {
+        "dependencies": {
+          "ImdbLib": "0.0.1"
+        },
+        "runtime": {
+          "ImdbRunner.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.11.46": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.46.0",
+            "fileVersion": "1.11.46.0"
+          }
+        }
+      },
+      "PowMaybeErr/0.0.2": {
+        "runtime": {
+          "lib/net6.0/PowMaybeErr.dll": {
+            "assemblyVersion": "0.0.2.0",
+            "fileVersion": "0.0.2.0"
+          }
+        }
+      },
+      "PowRxVar/0.0.2": {
+        "dependencies": {
+          "System.Reactive": "5.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/PowRxVar.dll": {
+            "assemblyVersion": "0.0.2.0",
+            "fileVersion": "0.0.2.0"
+          }
+        }
+      },
+      "RestSharp/108.0.2": {
+        "runtime": {
+          "lib/net6.0/RestSharp.dll": {
+            "assemblyVersion": "108.0.2.0",
+            "fileVersion": "108.0.2.0"
+          }
+        }
+      },
+      "System.Reactive/5.0.0": {
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "ImdbLib/0.0.1": {
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.46",
+          "PowMaybeErr": "0.0.2",
+          "PowRxVar": "0.0.2",
+          "RestSharp": "108.0.2"
+        },
+        "runtime": {
+          "ImdbLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImdbRunner/0.0.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HtmlAgilityPack/1.11.46": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dLMn4EVfJBHWmWK4Uh0XGD76FPLHI0qr2Tm0s1m/xmgiHb1JUb9zB8AzO8HtrkBBlMN6JfCUBYddhqC0hZNR+g==",
+      "path": "htmlagilitypack/1.11.46",
+      "hashPath": "htmlagilitypack.1.11.46.nupkg.sha512"
+    },
+    "PowMaybeErr/0.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/PTJuioxmsmDu/BHJK1CKgur2QomTq0tPJHygcGhBUlMiOLHfQJ/psOK3hsgOxVwuY4BLgq0HYbpQhfPBMhZ9w==",
+      "path": "powmaybeerr/0.0.2",
+      "hashPath": "powmaybeerr.0.0.2.nupkg.sha512"
+    },
+    "PowRxVar/0.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hHPD/n1kOt71no0gqyQ0vDUd2vbUyLO9sXkovG4YsYtaH+ubmer49zjSlgmY0AvoFR1FHa4TQ6MTjaYlxR6eJA==",
+      "path": "powrxvar/0.0.2",
+      "hashPath": "powrxvar.0.0.2.nupkg.sha512"
+    },
+    "RestSharp/108.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zI1lzI+Jjzl6bcicyUYfLIGmmOAdJRkYepMnSPzrxd1o9RxztPaR/blUOmY8BpXdN3I+XlK9dtwCYRGCxvaODw==",
+      "path": "restsharp/108.0.2",
+      "hashPath": "restsharp.108.0.2.nupkg.sha512"
+    },
+    "System.Reactive/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "path": "system.reactive/5.0.0",
+      "hashPath": "system.reactive.5.0.0.nupkg.sha512"
+    },
+    "ImdbLib/0.0.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

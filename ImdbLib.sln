@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImdbLib", "ImdbLib\ImdbLib.csproj", "{73E78C5B-58C0-4A7D-9F31-BD7B6290C801}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playgrounds", "Playgrounds", "{14720BD9-80FE-4B43-BF1C-9E9484B63CDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImdbRunner", "Playgrounds\ImdbRunner\ImdbRunner.csproj", "{0F71068A-7E22-4E0B-BD7C-E28A3F0A56FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{53E9536A-4D19-43B9-BB1D-8C06AA7CBCBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImdbLib.Tests", "Tests\ImdbLib.Tests\ImdbLib.Tests.csproj", "{9C9EF5FB-0528-4A1F-9E1B-E22AEE022493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A6F929A-A879-49D0-86DF-C6A483465F7E}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73E78C5B-58C0-4A7D-9F31-BD7B6290C801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E78C5B-58C0-4A7D-9F31-BD7B6290C801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E78C5B-58C0-4A7D-9F31-BD7B6290C801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E78C5B-58C0-4A7D-9F31-BD7B6290C801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F71068A-7E22-4E0B-BD7C-E28A3F0A56FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F71068A-7E22-4E0B-BD7C-E28A3F0A56FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F71068A-7E22-4E0B-BD7C-E28A3F0A56FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F71068A-7E22-4E0B-BD7C-E28A3F0A56FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9EF5FB-0528-4A1F-9E1B-E22AEE022493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9EF5FB-0528-4A1F-9E1B-E22AEE022493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9EF5FB-0528-4A1F-9E1B-E22AEE022493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9EF5FB-0528-4A1F-9E1B-E22AEE022493}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F71068A-7E22-4E0B-BD7C-E28A3F0A56FC} = {14720BD9-80FE-4B43-BF1C-9E9484B63CDD}
+		{9C9EF5FB-0528-4A1F-9E1B-E22AEE022493} = {53E9536A-4D19-43B9-BB1D-8C06AA7CBCBE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEE0979B-3660-4385-BC00-A2EFF705171A}
+	EndGlobalSection
+EndGlobal
