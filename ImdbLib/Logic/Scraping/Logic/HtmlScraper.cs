@@ -44,7 +44,7 @@ static class HtmlScraper
 	{
 		// Director								Lorcan Finnegan
 		// Star									Imogen Poots | Danielle Ryan | Molly McCann
-		string MkPrincipalXPath(string key) => $"(//li[ @data-testid='title-pc-principal-credit' and ./*[self::span or self::a][contains(text(), '{key}')]])[1]/div/ul/li";
+		string MkPrincipalXPath(string key) => $"(//li[ @data-testid='title-pc-principal-credit' and ./*[self::span or self::a or self::button][contains(text(), '{key}')]])[1]/div/ul/li";
 
 		// title-details-releasedate			March 27, 2020 (United Kingdom)
 		// title-details-origin					Ireland | Belgium | Denmark

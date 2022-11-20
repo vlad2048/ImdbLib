@@ -1,5 +1,5 @@
 <Query Kind="Program">
-  <Reference>C:\Dev_Nuget\Libs\ImdbLib\ImdbLib\bin\Debug\net6.0\ImdbLib.dll</Reference>
+  <Reference>C:\Dev_Nuget\Libs\ImdbLib\ImdbLib\bin\Debug\net7.0\ImdbLib.dll</Reference>
   <Namespace>ImdbLib</Namespace>
   <Namespace>ImdbLib.Logic.Scraping.Utils</Namespace>
   <Namespace>ImdbLib.Structs</Namespace>
@@ -31,6 +31,7 @@ void Main()
 		where movie.TotalReviewCount >= 100
 		where movie.GetUserScore() >= 60
 		where movie.Rating >= 60
+		where movie.Reviews.Count(e => e.Score >= 90) >= 3
 		//where movie.HasGenres(Genre.Comedy)
 		
 		select movie
@@ -39,7 +40,7 @@ void Main()
 		.ToArray();
 
 	list
-		.Take(200)
+		//.Take(200)
 		.Dump($"total:{list.Length}");
 }
 

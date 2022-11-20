@@ -3,6 +3,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using ImdbLib.Logic.Datasets.Structs;
 using ImdbLib.Logic.RepoLogic;
+using ImdbLib.Logic.Scraping.Logic;
 using ImdbLib.Logic.Scraping.Structs;
 using ImdbLib.Logic.Scraping.Utils;
 using PowRxVar;
@@ -49,6 +50,10 @@ class Scraper : IDisposable
 					.TakeOpt(dbgLimitTodoCount)
 			);
 		}).D(d);
+
+
+		KnownMovieRegressionChecker.Check();
+
 
 		ScraperRxUtils.HookInterruptableOperation(WhenStart, WhenStop, async (cancelToken, interrupt) =>
 		{

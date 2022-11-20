@@ -1,12 +1,18 @@
 <Query Kind="Program">
-  <Reference>C:\Dev_Nuget\Libs\ImdbLib\ImdbLib\bin\Debug\net6.0\ImdbLib.dll</Reference>
+  <Reference>C:\Dev_Nuget\Libs\ImdbLib\ImdbLib\bin\Debug\net7.0\ImdbLib.dll</Reference>
   <Namespace>ImdbLib</Namespace>
   <Namespace>ImdbLib.Logic.Datasets.Structs</Namespace>
-  <Namespace>ImdbLib.Utils.Exts</Namespace>
-  <Namespace>System.Threading.Tasks</Namespace>
   <Namespace>ImdbLib.Logic.Scraping.Structs</Namespace>
   <Namespace>ImdbLib.Logic.Scraping.Structs.Enums</Namespace>
+  <Namespace>ImdbLib.Utils.Exts</Namespace>
+  <Namespace>System.Threading.Tasks</Namespace>
 </Query>
+
+/* TODOs:
+- write a tool that starts scraping and allows you to verify the errors
+  to make sure it's doing the right thing
+*/
+
 
 async Task Main()
 {

@@ -1,8 +1,9 @@
 <Query Kind="Program">
-  <Reference>C:\Dev_Nuget\Libs\ImdbLib\ImdbLib\bin\Debug\net6.0\ImdbLib.dll</Reference>
+  <Reference>C:\Dev_Nuget\Libs\ImdbLib\ImdbLib\bin\Debug\net7.0\ImdbLib.dll</Reference>
   <NuGetReference>HtmlAgilityPack</NuGetReference>
   <NuGetReference>PowMaybeErr</NuGetReference>
   <Namespace>HtmlAgilityPack</Namespace>
+  <Namespace>ImdbLib.Logic.Datasets.Structs</Namespace>
   <Namespace>ImdbLib.Logic.Scraping.Logic</Namespace>
   <Namespace>ImdbLib.Logic.Scraping.Structs</Namespace>
   <Namespace>ImdbLib.Logic.Scraping.Structs.Enums</Namespace>
@@ -15,7 +16,6 @@
   <Namespace>RestSharp</Namespace>
   <Namespace>System.Text.Json</Namespace>
   <Namespace>System.Threading.Tasks</Namespace>
-  <Namespace>ImdbLib.Logic.Datasets.Structs</Namespace>
 </Query>
 
 static readonly IPagerWithSave FilePager = Pagers.File(@"C:\Dev_Nuget\Libs\ImdbLib\_infos\imdb-pages");
@@ -25,18 +25,26 @@ static readonly Lazy<Dictionary<int, TitleState>> TitleStatesLazy = new(() => Ti
 static int[] TitleIds => TitleIdsLazy.Value;
 static Dictionary<int, TitleState> TitleStates => TitleStatesLazy.Value;
 
+
+
+
 int Main()
 {
+	//KnownMovieRegressionChecker.Check();return 0;
+	
+	
 	// ***********************************
 	// * Check the Prod scraping process *
 	// ***********************************
 	// Show unknown issues
 	// -------------------
-	return ProdCheckIssues();
+	//return ProdCheckIssues();
 
 	// Reset the states for a set of movies
 	// ------------------------------------
-	//return ProdClearTitleStates(13489010, 16218654, 11634116, 14390820, 11968190, 12122020, 23026026, 11279006, 11590024);
+	//var cutoff = new DateTime(2022, 11, 17);
+	//var idsToRemove = TitleStates.Where(e => e.Value.LastUpdate >= cutoff && e.Value.Status != MovieStatus.OK).SelectToArray(e => e.Key);
+	//return ProdClearTitleStates(idsToRemove);
 
 	// Show the latest scraped movies
 	// ------------------------------
@@ -46,9 +54,17 @@ int Main()
 	// ***********************************************************
 	// * Save a movie html pages to disk and parse it from there *
 	// ***********************************************************
-	//SaveId(13489010);
-	//LoadId(13489010, FilePager).Dump();
-	//return 0;
+	/*var cutoff = new DateTime(2022, 11, 17);
+	var ids = TitleStates.Where(e => e.Value.LastUpdate >= cutoff && e.Value.Status != MovieStatus.OK).Select(e => e.Key).Shuffle(null);
+	ids.Length.Dump();
+	if (ids.Length > 0)
+	{
+		var id = ids[0];
+		//SaveId(id);
+		//LoadId(id, FilePager).Dump();
+		LoadId(id, Pagers.Html).Dump();
+	}
+	return 0;*/
 
 
 	// *********************************************
@@ -217,7 +233,7 @@ static class HtmlScraper
 	{
 		// Director								Lorcan Finnegan
 		// Star									Imogen Poots | Danielle Ryan | Molly McCann
-		string MkPrincipalXPath(string key) => $"(//li[ @data-testid='title-pc-principal-credit' and ./*[self::span or self::a][contains(text(), '{key}')]])[1]/div/ul/li";
+		string MkPrincipalXPath(string key) => $"(//li[ @data-testid='title-pc-principal-credit' and ./*[self::span or self::a or self::button][contains(text(), '{key}')]])[1]/div/ul/li";
 
 		// title-details-releasedate			March 27, 2020 (United Kingdom)
 		// title-details-origin					Ireland | Belgium | Denmark
