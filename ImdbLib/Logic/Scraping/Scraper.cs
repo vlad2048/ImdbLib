@@ -34,6 +34,7 @@ class Scraper : IDisposable
 	public Scraper(
 		Repo repo,
 		ImdbScrapeDirection scrapeDirection,
+		TimeSpan fetchTimeout,
 		int parallelism,
 		int batchSize,
 		int? dbgLimitTodoCount

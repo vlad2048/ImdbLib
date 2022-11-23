@@ -54,6 +54,10 @@ int Main()
 	// ***********************************************************
 	// * Save a movie html pages to disk and parse it from there *
 	// ***********************************************************
+	//var id = 110912;
+	//SaveId(id);
+	//LoadId(id, FilePager).Dump();
+	
 	/*var cutoff = new DateTime(2022, 11, 17);
 	var ids = TitleStates.Where(e => e.Value.LastUpdate >= cutoff && e.Value.Status != MovieStatus.OK).Select(e => e.Key).Shuffle(null);
 	ids.Length.Dump();

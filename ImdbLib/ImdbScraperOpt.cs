@@ -22,6 +22,7 @@ public class ImdbScraperOpt
 
 	public ImdbScrapeDirection ScrapeDirection { get; set; } = ImdbScrapeDirection.FromNewestToOldest;
 
+	public TimeSpan FetchTimeout { get; set; } = TimeSpan.FromMinutes(1);
 	public int ScrapeBatchSize { get; set; } = 64;
 	public int ScrapeParallelism { get; set; } = 4;
 

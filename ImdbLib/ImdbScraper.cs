@@ -29,6 +29,7 @@ public class ImdbScraper : IDisposable
 		scraper = new Scraper(
 			repo,
 			opt.ScrapeDirection,
+			opt.FetchTimeout,
 			opt.ScrapeParallelism,
 			opt.ScrapeBatchSize,
 			opt.DbgLimitTodoCount
