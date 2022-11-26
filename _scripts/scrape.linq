@@ -13,8 +13,40 @@
   to make sure it's doing the right thing
 */
 
-
 async Task Main()
+{
+	Util.NewProcess = true;
+	await Run_Repeat();	
+}
+
+async Task Run_Repeat()
+{
+	while (true)
+	{
+		using (var imdb = new ImdbScraper(opt =>
+		{
+			opt.DbgUseSmallDatasets = false;
+			opt.DbgLimitTodoCount = null;
+			opt.ScrapeParallelism = 4;
+			opt.ScrapeBatchSize = 64;
+		}))
+		{
+			await imdb.Init();
+
+			imdb.Start();
+			Thread.Sleep(TimeSpan.FromMinutes(15));
+			imdb.Stop();
+		}
+		
+		Thread.Sleep(TimeSpan.FromSeconds(10));
+	}
+}
+
+
+
+
+
+async Task Run_SingleWithKeyStop()
 {
 	Util.NewProcess = true;
 	
@@ -26,13 +58,11 @@ async Task Main()
 		opt.ScrapeBatchSize = 64;
 	});
 	await imdb.Init();
-	
+
 	imdb.Start();
 	Util.ReadLine("Press enter to stop");
 	imdb.Stop();
 }
-
-
 
 
 void FixStates()

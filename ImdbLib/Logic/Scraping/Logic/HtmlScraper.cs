@@ -15,7 +15,11 @@ static class HtmlScraper
 	// **********
 	// * Public *
 	// **********
-	public static async Task<Maybe<MovieScrapeResult>> Scrape(int id, IPager pager, CancellationToken cancelToken)
+	public static async Task<Maybe<MovieScrapeResult>> Scrape(
+		int id,
+		IPager pager,
+		CancellationToken cancelToken
+	)
 	{
 		var mayPages = await PageReader.ReadPages(id, pager, cancelToken);
 		if (mayPages == null) return May.None<MovieScrapeResult>();

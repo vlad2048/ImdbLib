@@ -25,24 +25,17 @@ void Main()
 		where !exclude.Contains(movie.Id)
 		where movie.IsNotCountries("India", "Pakistan", "Iran", "Serbia", "Egypt", "Saudi Arabia")
 		//where movie.Countries.Length <= 2
-		//where !movie.HasGenres(Genre.Documentary, Genre.Biography)
-
-		//where movie.IsCountries("France")
+		
+		where movie.Languages.Length > 0 && movie.Languages[0] == "Japanese"
 		where movie.TotalReviewCount >= 50
-		where movie.GetUserScore() >= 50
-		where movie.Rating >= 50
-		//where movie.Reviews.Count(e => e.Score >= 90) >= 3
-		where movie.HasGenres(Genre.SciFi)
-		//where movie.IsCountries("Japan")
 		
 		select movie
 	)
-		//.OrderByDescending(e => e.ReleaseDate.Year).ThenByDescending(e => e.Rating).ThenByDescending(e => e.Reviews.Length)
 		.OrderByDescending(e => e.Rating)
 		.ToArray();
 
 	list
-		//.Take(200)
+		.Take(600)
 		.Dump($"total:{list.Length}");
 }
 

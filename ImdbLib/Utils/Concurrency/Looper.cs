@@ -10,7 +10,6 @@ interface IParallelLooper<out T> : IAsyncEnumerable<T>
 
 static class Looper
 {
-
 	public static async Task Loop<T>(
 		IEnumerable<T> source,
 		int parallelism,

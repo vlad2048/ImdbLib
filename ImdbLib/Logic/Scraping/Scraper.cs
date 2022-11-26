@@ -56,31 +56,41 @@ class Scraper : IDisposable
 		KnownMovieRegressionChecker.Check();
 
 
-		ScraperRxUtils.HookInterruptableOperation(WhenStart, WhenStop, async (cancelToken, interrupt) =>
-		{
-			whenUpdate.OnNext(repo.Tracker.GetScrapeState(true, 0));
-			while (titlesTodo.Any() && !cancelToken.IsCancellationRequested)
+		ScraperRxUtils.HookInterruptableOperation(
+			WhenStart,
+			WhenStop,
+			async (cancelToken, interrupt) =>
 			{
-				var holder = BatchLogic.Start(titlesTodo.Take(batchSize));
-				var wasInterrupted = await BatchLogic.Run(holder, parallelism, cancelToken, interrupt);
-				var state = BatchLogic.Finish(titlesTodo, holder, repo);
-				whenUpdate.OnNext(state);
-
-				if (wasInterrupted)
+				whenUpdate.OnNext(repo.Tracker.GetScrapeState(true, 0));
+				while (titlesTodo.Any() && !cancelToken.IsCancellationRequested)
 				{
-					Console.WriteLine();
-					Console.WriteLine("***************************************");
-					Console.WriteLine("* Rate limit defense detected -> Wait *");
-					Console.WriteLine("***************************************");
-					Console.WriteLine($"Time: {DateTime.Now:HH:mm:ss}");
-					Console.WriteLine();
-					var delay = TimeSpan.FromMinutes(10);
-					Console.Write($"Waiting: {delay} ... ");
-					await Task.Delay(delay);
-					Console.WriteLine("Done");
+					var holder = BatchLogic.Start(titlesTodo.Take(batchSize));
+					var wasInterrupted = await BatchLogic.Run(
+						holder,
+						parallelism,
+						cancelToken,
+						interrupt,
+						fetchTimeout
+					);
+					var state = BatchLogic.Finish(titlesTodo, holder, repo);
+					whenUpdate.OnNext(state);
+
+					if (wasInterrupted)
+					{
+						Console.WriteLine();
+						Console.WriteLine("***************************************");
+						Console.WriteLine("* Rate limit defense detected -> Wait *");
+						Console.WriteLine("***************************************");
+						Console.WriteLine($"Time: {DateTime.Now:HH:mm:ss}");
+						Console.WriteLine();
+						var delay = TimeSpan.FromMinutes(10);
+						Console.Write($"Waiting: {delay} ... ");
+						await Task.Delay(delay);
+						Console.WriteLine("Done");
+					}
 				}
+				whenUpdate.OnNext(repo.Tracker.GetScrapeState(false, 0));
 			}
-			whenUpdate.OnNext(repo.Tracker.GetScrapeState(false, 0));
-		}).D(d);
+		).D(d);
 	}
 }

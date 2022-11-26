@@ -41,7 +41,8 @@ static class BatchLogic
 		Holder holder,
 		int parallelism,
 		CancellationToken cancelToken,
-		Action interrupt
+		Action interrupt,
+		TimeSpan fetchTimeout
 	)
 	{
 		var wasInterrupted = false;
@@ -51,11 +52,17 @@ static class BatchLogic
 				holder.TitlesToDo,
 				parallelism,
 				cancelToken,
-				async title => await ProcessMovie(title, holder, cancelToken, () =>
-				{
-					wasInterrupted = true;
-					interrupt();
-				})
+				async title => await ProcessMovie(
+					title,
+					holder,
+					cancelToken,
+					fetchTimeout,
+					() =>
+					{
+						wasInterrupted = true;
+						interrupt();
+					}
+				)
 			);
 		}
 		catch (OperationCanceledException)
@@ -93,10 +100,15 @@ static class BatchLogic
 		TitleNfo title,
 		Holder holder,
 		CancellationToken cancelToken,
+		TimeSpan fetchTimeout,
 		Action interrupt
 	)
 	{
-		var mayScrape = await HtmlScraper.Scrape(title.Id, Pagers.Html, cancelToken);
+		var mayScrape = await HtmlScraper.Scrape(
+			title.Id,
+			Pagers.Html,
+			cancelToken
+		);
 		if (mayScrape.IsNone(out var scrape))
 		{
 			if (!cancelToken.IsCancellationRequested) throw new ArgumentException("This should only happen when cancelled");
