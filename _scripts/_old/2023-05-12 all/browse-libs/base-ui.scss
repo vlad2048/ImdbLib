@@ -1,0 +1,98 @@
+// *******************
+// * base-icontoggle *
+// *******************
+.base-icontoggle {
+  font-size: var(--fnt-size-5);
+  padding: 5px;
+  cursor: pointer;
+  background-color: #555;
+  border: 3px solid #444;
+  border-radius: 5px;
+  text-align: center;
+  &:hover {
+    background-color: #666;
+  }
+}
+
+.base-icontoggle-on {
+  color: #fff;
+}
+
+.base-icontoggle-off {
+  color: #888;
+}
+
+
+// ****************
+// * base-iconbtn *
+// ****************
+:root {
+  --base-iconbtn-color: #fff;
+  --base-iconbtn-color-disabled: #888;
+}
+
+.base-iconbtn {
+  cursor: pointer;
+
+  background-color: #444;
+  border-radius: 0;
+  border: 0px solid black;
+  padding: 0px 3px;
+  border-radius: 10px;
+  font-weight: normal;
+  font-size: 36px;
+
+  color: var(--base-iconbtn-color);
+
+  &:hover:not(:disabled) {
+    opacity: 0.6;
+  }
+  &:disabled {
+    color: var(--base-iconbtn-color-disabled);
+  }
+}
+
+
+// *******************
+// * base-propfilter *
+// *******************
+.base-propfilter-on {
+  border: 3px solid #ccc;
+}
+.base-propfilter {
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-3);
+  justify-content: flex-start;
+  padding: var(--gap);
+  gap: var(--gap);
+
+  > .base-propfilter-name {
+    width: 130px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  > .base-propfilter-enabled {
+
+  }
+
+  > .base-propfilter-main {
+    flex: 1;
+  }
+
+  > .base-propfilter-main-genre {
+    display: flex;
+    flex-flow: row wrap;
+    gap: calc(var(--gap) / 2);
+    font-size: var(--fnt-size-1);
+    > .base-propfilter-main-genre-single {
+      cursor: pointer;
+      background-color: #e0b0ae;
+    }
+    > .base-propfilter-main-genre-single-on {
+      cursor: pointer;
+      background-color: #aee0ae;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "Filters": [
+    {
+      "Name": "f1",
+      "PropFilters": [
+        {
+          "Enabled": true,
+          "Type": 0,
+          "YearVal": 2004,
+          "GenreVal": null,
+          "ImdbRatingVal": null,
+          "ReviewRatingVal": null,
+          "ReviewCountVal": null,
+          "TitleSearch": null,
+          "TitlePlotSearch": null,
+          "DirectorSearch": null,
+          "ActorSearch": null,
+          "Name": "Year (min)"
+        },
+        {
+          "Enabled": true,
+          "Type": 1,
+          "YearVal": 2004,
+          "GenreVal": null,
+          "ImdbRatingVal": null,
+          "ReviewRatingVal": null,
+          "ReviewCountVal": null,
+          "TitleSearch": null,
+          "TitlePlotSearch": null,
+          "DirectorSearch": null,
+          "ActorSearch": null,
+          "Name": "Year (max)"
+        },
+        {
+          "Enabled": true,
+          "Type": 4,
+          "YearVal": null,
+          "GenreVal": null,
+          "ImdbRatingVal": 75,
+          "ReviewRatingVal": null,
+          "ReviewCountVal": null,
+          "TitleSearch": null,
+          "TitlePlotSearch": null,
+          "DirectorSearch": null,
+          "ActorSearch": null,
+          "Name": "ImdbRating (min)"
+        },
+        {
+          "Enabled": true,
+          "Type": 5,
+          "YearVal": null,
+          "GenreVal": null,
+          "ImdbRatingVal": 75,
+          "ReviewRatingVal": null,
+          "ReviewCountVal": null,
+          "TitleSearch": null,
+          "TitlePlotSearch": null,
+          "DirectorSearch": null,
+          "ActorSearch": null,
+          "Name": "ImdbRating (max)"
+        }
+      ]
+    },
+    {
+      "Name": "f2",
+      "PropFilters": []
+    }
+  ],
+  "Combos": [
+    {
+      "Name": "c1",
+      "Filters": [
+        "f1"
+      ]
+    },
+    {
+      "Name": "c2",
+      "Filters": [
+        "f2"
+      ]
+    }
+  ],
+  "SelCombo": "c1"
+}

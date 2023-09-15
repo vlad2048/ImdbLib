@@ -1,0 +1,10 @@
+.pane-toggler {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--gap);
+
+  i:last-child {
+    margin-top: auto;
+  }
+}

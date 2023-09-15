@@ -25,7 +25,7 @@ public class ImdbScraper : IDisposable
 	{
 		opt = ImdbScraperOpt.Build(optFun);
 		fileApi = new FileApi(opt.DataFolder, opt.DbgUseSmallDatasets);
-		repo = new Repo(fileApi);
+		repo = new Repo(fileApi, opt.DisableLogging);
 		scraper = new Scraper(
 			repo,
 			opt.ScrapeDirection,
@@ -38,6 +38,8 @@ public class ImdbScraper : IDisposable
 
 	public async Task Init()
 	{
+		repo.Data.Load();
+
 		await DatasetGetter.Init(
 			fileApi,
 			opt.DatasetRefreshPeriod,
@@ -46,8 +48,6 @@ public class ImdbScraper : IDisposable
 		);
 		if (opt.DbgAnalyzeOnInit)
 			DatasetGetter.AnalyzeDatasets(fileApi);
-
-		repo.Data.Load();
 
 		var titlesAll = DatasetGetter.LoadTitles(fileApi);
 		repo.Tracker.Init(titlesAll.Length);

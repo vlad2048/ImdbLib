@@ -13,9 +13,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
-		<PackageReference Include="PowMaybe" Version="0.0.6" />
-		<PackageReference Include="PowMaybeErr" Version="0.0.6" />
-		<PackageReference Include="PowRxVar" Version="0.0.11" />
+		<PackageReference Include="PowMaybe" Version="0.0.7" />
+		<PackageReference Include="PowMaybeErr" Version="0.0.7" />
+		<PackageReference Include="PowRxVar" Version="0.0.15" />
 		<PackageReference Include="RestSharp" Version="108.0.2" />
 	</ItemGroup>
 

@@ -1,0 +1,85 @@
+// **********
+// * Layout *
+// **********
+body {
+
+  > header {
+    display: flex;
+    align-items: baseline;
+    background-color: var(--back-color-header);
+    gap: calc(var(--gap) * 2);
+    padding: calc(var(--gap) * 2);
+  }
+
+  > .main-div {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+
+    > .main-content {
+      flex: 1;
+      display: flex;
+      position: relative;
+      
+      > main {
+        flex: 1;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+    }
+    > aside {
+      display: flex;
+    }
+  }
+
+  > footer {
+    display: flex;
+  }
+
+}
+
+// ***********
+// * Padding *
+// ***********
+body {
+  > .main-div {
+    > .main-content {
+      > .main-overlay {
+        // padding: var(--gap);
+      }
+    }
+  }
+}
+
+
+// ****************
+// * Debug Colors *
+// ****************
+$dbg: false;
+
+@if $dbg {
+  body {
+    > header {
+				background-color: #2c81d1;
+    }
+    > .main-div {
+				background-color: #c1d12c;
+        > .main-content {
+          > .main-overlay {
+            background-color: #5343e2;
+          }
+          > main {
+            background-color: #e24d43;
+          }
+        }
+        > aside {
+				  background-color: #8f2cd1;
+        }
+    }
+    > footer {
+				background-color: #d17c2c;
+    }
+  }
+}

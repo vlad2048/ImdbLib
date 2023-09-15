@@ -1,0 +1,53 @@
+.editlist {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--gap);
+  gap: var(--gap);
+  background-color: var(--gray-2);
+
+  > .editlist-titlelist {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    > .editlist-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+      > .editlist-item {
+        cursor: pointer;
+        background-color: var(--gray-3);
+        border: 1px solid var(--gray-1);
+      }
+      > .editlist-item-selsingle {
+        border: 1px solid var(--gray-9);
+      }
+      > .editlist-item-selmulti {
+        background-color: var(--gray-5);
+      }
+    }
+  }
+
+
+  > .editlist-btnrow {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--gap);
+  }
+}
+
+$dbg: false;
+
+@if $dbg {
+  .editlist {
+    background-color: #8abbe4;
+    > .editlist-titlelist {
+      > .editlist-list {
+        background-color: #c08ae4;
+      }
+    }
+  }
+}

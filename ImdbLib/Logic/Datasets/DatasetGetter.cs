@@ -131,7 +131,7 @@ static class DatasetGetter
 	)
 	{
 		if (!File.Exists(file)) return true;
-		var fileTime = new FileInfo(file).CreationTime;
+		var fileTime = new FileInfo(file).LastWriteTime;
 		var fileAge = DateTime.Now - fileTime;
 		return fileAge >= refreshPeriod;
 	}

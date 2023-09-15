@@ -18,7 +18,9 @@ static class Program
 		{
 			opt.DbgUseSmallDatasets = false;
 			opt.DbgLimitTodoCount = null;
-			opt.ScrapeParallelism = 4;
+			//opt.ScrapeParallelism = 4;
+			//opt.ScrapeBatchSize = 64;
+			opt.ScrapeParallelism = 1;
 			opt.ScrapeBatchSize = 64;
 			SetOpt(val => opt.ScrapeParallelism = val, args, 0);
 			SetOpt(val => opt.ScrapeBatchSize = val, args, 1);

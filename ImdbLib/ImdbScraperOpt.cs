@@ -10,7 +10,8 @@ public enum ImdbScrapeDirection
 
 public class ImdbScraperOpt
 {
-	public string DataFolder { get; set; } = @"C:\caches\imdb";
+	public string DataFolder { get; set; } = Consts.DefaultDataFolder;
+	public bool DisableLogging { get; set; }
 	public TimeSpan DatasetRefreshPeriod { get; set; } = TimeSpan.FromDays(60);
 
 	public Func<TitleBasicsRec, bool> TitleFilter { get; set; } = e =>

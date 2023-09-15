@@ -10,9 +10,9 @@ class Repo
 	public DataHolder Data { get; }
 	public StateTracker Tracker { get; }
 
-	public Repo(FileApi fileApi)
+	public Repo(FileApi fileApi, bool disableLogging)
 	{
-		Data = new DataHolder(fileApi);
+		Data = new DataHolder(fileApi, disableLogging);
 		Tracker = new StateTracker(fileApi);
 	}
 

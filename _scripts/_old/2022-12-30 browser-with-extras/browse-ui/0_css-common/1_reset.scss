@@ -1,0 +1,25 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html, body {
+  height: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+body {
+  font-family: Roboto;
+  font-size: var(--fnt-size-3);
+  color: var(--text-color);
+  background-color: var(--back-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

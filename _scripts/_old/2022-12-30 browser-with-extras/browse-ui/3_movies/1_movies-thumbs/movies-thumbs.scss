@@ -1,0 +1,132 @@
+.moviesthumbs {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-width), 1fr));
+  grid-auto-rows: min-content;
+  overflow-y: auto;
+  padding: var(--gap);
+  gap: var(--gap);
+}
+
+.moviethumb {
+  cursor: pointer;
+  background-color: var(--gray-3);
+  border: 1px solid #000;
+  color: white;
+  border-radius: 15px;
+  // aspect-ratio: 2/3;
+  height: var(--thumb-height);
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+
+  > .moviethumb-inner {
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    position: relative;
+    gap: 5px;
+
+    > .moviethumb-top {
+      height: 280px;
+      display: flex;
+      gap: 5px;
+      > .moviethumb-img-wrap {
+        flex-shrink: 0;
+        //flex: 1 0 50%;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+      
+        > img {
+          width: 100%;
+          object-fit: contain;
+        }
+
+        > .moviethumb-img-stars {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          display: flex;
+          background-color: #448C;
+          padding-right: 5px;
+        }
+      }
+      > .moviethumb-reviews {
+        //flex: 1fr;
+        flex-shrink: 1;
+        overflow: hidden;
+        // height: 350px;
+        background-color: var(--gray-7);
+        color: black;
+        display: flex;
+        flex-direction: column;
+        font-size: var(--fnt-size-1);
+        padding: 3px;
+        > .moviethumb-review {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    > .moviethumb-bottom {
+      position: relative;
+      background-color: var(--gray-3);
+      color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      > .moviethumb-name {
+        font-size: var(--fnt-size-4);
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 3px 3px #222;
+      }
+      > .moviethumb-description {
+        background-color: var(--gray-2);
+        padding: 5px;
+        font-size: var(--fnt-size-2);
+        border-radius: 10px;
+        color: var(--gray-8);
+        overflow: hidden;
+    }
+
+      > .moviethumb-keyval-wrap {
+        margin-top: auto;
+        > .moviethumb-keyval {
+          display: flex;
+          align-items: center;
+          font-size: var(--fnt-size-2);
+          white-space: nowrap;
+          > .moviethumb-key {
+            font-weight: bold;
+            width: 80px;
+            color: #db7f28;
+          }
+          > .moviethumb-val {
+          }
+        
+        }
+      }
+    }
+  }
+}
+
+
+
+.pager {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--gap);
+
+  .pager-range {
+    flex: 1;
+  }
+}
